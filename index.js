@@ -207,12 +207,3 @@ console.log('Kibana available at http://' + BIND_ADDRESS + ':' + PORT + '/_plugi
 if (argv.H) {
     console.log('Health endpoint enabled at http://' + BIND_ADDRESS + ':' + PORT + argv.H);
 }
-
-/* Not all proxies are run from cli.
- *  This fails when aws cli is not configured and credentials are specified in the environment
- *  OR the proxy is run from ec2 instance with appropriate instance-profile
-fs.watch(`${homedir}/.aws/credentials`, (eventType, filename) => {
-    credentials = new AWS.SharedIniFileCredentials({profile: PROFILE});
-    AWS.config.credentials = credentials;
-});
-*/
